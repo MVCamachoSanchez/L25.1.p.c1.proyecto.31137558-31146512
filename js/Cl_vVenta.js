@@ -1,18 +1,26 @@
-export default class Cl_iVenta{
+export default class Cl_vVenta{
+    constructor() {
+        this.inCliente = document.getElementById("ventaForm_inCliente");
+        this.inFactura = document.getElementById("ventaForm_inFactura");
+        this.inCosto = document.getElementById("ventaForm_inCosto");
+        this.inCantArticulos = document.getElementById("ventaForm_inCantArticulos");
+        this.btProcesar = document.getElementById("ventaForm_btProcesar");
+      }
 
-    get nombre(){
-        return +prompt("Ingrese el nombre");
-    }
+      get cliente() {
+        return this.inCliente.value;
+      }
 
-    get factura(){
-        return +prompt("Ingrese el numero de la factura");
-    }
+      get factura() {
+        return +this.inFactura.value;
+      }
 
-    get costo(){
-        return +prompt("Ingrese el Costo del articulo");
-    }
+      get costo() {
+        return +this.inCosto.value;
+      }
 
-    get cantArticulo(){
-        return +prompt("Ingrese la cantidad de articulo adquiridos")
-    }
+      get cantArticulo() {
+        return +this.inCantArticulos.value;
+      }
+
 }

@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro Comercial Ciudad Tamanaco</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="salida"></div>
-    <script type="module" src="js/principal.js"></script>
+    <section id="ventaForm">
+        <h3>Datos del cliente</h3>
+        <input type="text" id="ventaForm_inCliente" placeholder="Cliente"></input>
+        <input type="text" id="ventaForm_inFactura" placeholder="Factura"></input>
+        <input type="text" id="ventaForm_inCosto" placeholder="Costo"></input>
+        <input type="text" id="ventaForm_inCantArticulos" placeholder="Cant. de articulos"></input>
+        <button id="ventaForm_btProcesar">Procesar</button> 
+      </section>
+      <section id="mainForm">
+        <h3>Iniciar la tienda</h3>
+        <label>Monto en Caja</label>
+        <input id="mainForm_iniciarCaja" placeholder="Monto inicial en caja"></input>
+        <label>Porcentaje de Incremento</label>
+        <input id="mainForm_iniciarporIncremento" placeholder="Porcentaje de Incremento"></input>
+        <button id="mainForm_btIniciar">Iniciar</button>
+        <table id="mainForm_tabla">
+          <tr>
+            <th>Cliente</th>
+            <th>Factura</th>
+            <th>Costo</th>
+            <th>Cant. de articulos</th>
+          </tr>
+        </table>
+        <div id="salida"></div>
+      </section>
 </body>
+     <script type="module">
+          import Cl_principal from "./js/principal.js";
+         new Cl_principal()
+     </script>
 </html>

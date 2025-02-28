@@ -1,16 +1,16 @@
-export default class Cl_venta{
-    constructor(nombre, factura, costo, cantAticulo){
-        this.nombre = nombre;
-        this.factura = factura;
-        this.costo = costo;
-        this.cantArticulo = cantAticulo;
+export default class Cl_mVenta{
+    constructor({cliente, factura, costo, cantArticulo}){
+    this.cliente = cliente;
+    this.factura = factura;
+    this.costo = costo;
+    this.cantArticulo = cantArticulo;
     }
 
-    set nombre(nombre){
-        this._nombre = nombre;
+    set cliente(cliente){
+        this._cliente = cliente;
     }
-    get nombre(){
-        return this._nombre;
+    get cliente(){
+        return this._cliente;
     }
     
     set factura(factura){
@@ -32,5 +32,9 @@ export default class Cl_venta{
     }
     get cantArticulo(){
         return this._cantArticulo;
+    }
+
+    monto(){
+        return this.costo * this.cantArticulo
     }
 }

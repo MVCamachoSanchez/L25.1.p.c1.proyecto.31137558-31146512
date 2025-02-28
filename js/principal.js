@@ -17,22 +17,16 @@ cliente: 'Luis', factura: 1111, costo: 100, cnArticulos: 3
 cliente: 'Carla', factura: 2222, costo: 50, cnArticulos: 1
 cliente: Mery', factura: 3333, costo: 200, cnArticulos: 10*/
 
-import Cl_venta from "./Cl_venta.js";
-import Cl_tienda from "./Cl_tienda.js";
 
-let cliente1 = new Cl_venta("Luis", 111, 100, 3);
-let cliente2 = new Cl_venta("Carla", 222, 50, 1);
-let cliente3 = new Cl_venta("Mery", 333, 200, 10);
+import Cl_controlador from "./Cl_controlador.js";
+import Cl_mTienda from "./Cl_mTienda.js";
+import Cl_vTienda from "./Cl_vTienda.js";
 
-let tienda = new Cl_tienda();
-
-tienda.procesarVenta(cliente1);
-tienda.procesarVenta(cliente2);
-tienda.procesarVenta(cliente3);
-
-let salida = document.getElementById("salida");
- salida.innerHTML = `
- <br> Cliente que pago el mayor monto: ${tienda.mayorMontoPagado()}
- <br> Cantidad de clientes que llevaron un solo articulo: ${tienda.clientesUnArticulo()}
- <br> Monto final de la caja: ${tienda.totalcaja()}
- `;
+export default class Cl_principal{
+    constructor() {
+        let vista = new Cl_vTienda();
+        let modelo = new Cl_mTienda();
+        let controlador = new Cl_controlador(modelo, vista);
+        vista.controlador = controlador;
+      }
+}
