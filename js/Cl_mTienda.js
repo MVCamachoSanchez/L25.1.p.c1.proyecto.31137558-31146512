@@ -6,8 +6,6 @@ export default class Cl_mTienda{
         this.montoCaja = montoCaja;
         this.acmMontoC = 0.0;
         this.auxCliente = "";
-        //this.auxMonto = "";
-        //this.auxCosto = "";
     }
     
 
@@ -24,14 +22,6 @@ export default class Cl_mTienda{
     get montoCaja(){
         return this._montoCaja;
     }
-
-    /*incremento(){
-        return this.auxMonto * this.porIncremento
-    }*/
-
-   /* montoPagar(){
-        return this.incremento() + this.auxCosto
-    }*/
 
     procesarVenta(v){
         //Contar las personas que llevaron un solo articulo
